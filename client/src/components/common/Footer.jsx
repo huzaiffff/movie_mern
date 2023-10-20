@@ -1,4 +1,4 @@
-import { Paper, Stack, Button, Box } from '@mui/material';
+import { Paper, Stack, Button, Box, Typography } from '@mui/material';
 import React from 'react';
 import Container from './Container';
 import Logo from './Logo';
@@ -8,19 +8,32 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <Container>
-      <Paper square={true} sx={{ backgroundImage: "unset", padding: "2rem" }}>
+      <Paper
+        square
+        elevation={2}
+        sx={{
+          backgroundColor: '#1a1a1a',
+          padding: '0.1rem',
+          marginTop: '2rem',
+          boxShadow: '0px -4px 6px -4px rgba(0,0,0,0.2)',
+        }}
+      >
         <Stack
           alignItems="center"
           justifyContent="space-between"
-          direction={{ xs: "column", md: "row " }}
-          sx={{ height: "max-content" }}
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={3}
         >
           <Logo />
-          <Box>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
             {menuConfigs.main.map((item, index) => (
               <Button
                 key={index}
-                sx={{ color: "inherit" }}
+                sx={{
+                  color: 'white',
+                  textTransform: 'capitalize',
+                  '&:hover': { color: '#ff3366' },
+                }}
                 component={Link}
                 to={item.path}
               >
@@ -29,6 +42,9 @@ const Footer = () => {
             ))}
           </Box>
         </Stack>
+        <Typography variant="body2" sx={{ color: '#888888', marginTop: '0.1rem' }}>
+          © {new Date().getFullYear()} Laila Movie. All rights reserved.
+        </Typography>
       </Paper>
     </Container>
   );

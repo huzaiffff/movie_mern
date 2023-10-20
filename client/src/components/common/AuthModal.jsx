@@ -38,7 +38,7 @@ const AuthModal = () => {
         padding: 4,
         outline: "none"
       }}>
-        <Box sx={{ padding: 4, boxShadow: 24, backgroundColor: "background.paper" }}>
+        <Box sx={{ padding: 4, boxShadow: 30 , backgroundColor: "background.paper" }}>
           <Box sx={{ textAlign: "center", marginBottom: "2rem" }}>
             <Logo />
           </Box>
